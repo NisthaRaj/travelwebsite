@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+ * {
+        box-sizing: border-box;
+    }
+.flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.4em;
+        text-align: center;
+        justify-content: center;
+ }
+.flex-item-right {
+        background-color: #f1f1f1;
+        padding: 10px;
+        flex-basis: 600px;
+        justify-content: left;
+ }      
+
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+  color:black;
+  font-weight: bold;
+  font-family:Verdana;
+}
+input {
+    width: 100%;
+  }
+
+.right {
+    background-color: #4b4444;
+    float: center;
+    width: 10%;
+    padding: 10%;
+
+  }
+  body{
+    background-image: url("../static/images/trekking.svg");
+    background-repeat: repeat;
+    background-color: rgb(224, 220, 214); 
+    
+  }
+
+ 
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+   .menu, .right,.flex-item-right{
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+    <h1>REGISTER HERE.</h1>
+</div>
+
+<!--<div style="overflow:auto">
+  <div class="center">
+    <form action="register" method="post">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="First Name"><br>
+        <input type="text" name="last_name" placeholder="Last Name"><br>
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <input type="password" name="password1" placeholder="Password"><br>
+        <input type="password" name="password2" placeholder="Confirm Password"><br>
+        <input type="Submit">
+    </form>
+    <div>
+        {% for message in messages%}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+  </div>
+-->
+  
+
+<div style="overflow:auto">
+ 
+        <div class="flex-container">
+            <div class="flex-item-right">
+                <form action="register" method="post">
+                    {% csrf_token %}
+                    <label for="LastName">First Name</label><br>
+                    <input type="text" name="first_name" id="FirstName" ><br>
+                    <label for="LastName">Last Name</label><br>
+                    <input type="text" name="last_name" id="LastName"><br>
+                    <label for="UserName">User Name</label><br>
+                    <input type="text" name="username" id="UserName" ><br>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="Email"><br>
+                    <label for="Password">Password</label><br>
+                    <input type="password" name="password1" id="Password"><br>
+                    <label for="ConfirmPassword">Confirm Password</label><br>
+                    <input type="password" name="password2" id="ConfirmPassword"><br>
+                    <input type="Submit">
+                </form>
+                    <div>
+                        {% for message in messages%}
+                        <h3>{{message}}</h3>
+                        {% endfor %}
+                    </div>
+                    
+            </div>
+        </div>
+   
+</div>
+ 
+
+</body>
+</html>
+<!--<html>
+    <title>Registration</title>
+    <form action="register" method="post">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="First Name"><br>
+        <input type="text" name="last_name" placeholder="Last Name"><br>
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <input type="password" name="password1" placeholder="Password"><br>
+        <input type="password" name="password2" placeholder="Confirm Password"><br>
+        <input type="Submit">
+    </form>
+    <div>
+        {% for message in messages%}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+</html>
+-->
